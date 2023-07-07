@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:twf_clone/screens/home/components/section_title.dart';
-
 import '../../../size_config.dart';
 
 class SpecialOffers extends StatelessWidget {
@@ -19,14 +18,14 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/watch.png",
+                image: "assets/images/Image Banner 2.png",
                 category: "Smart Phones",
                 numOfBrands: 18,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/watch.png",
-                category: "Crank Phones",
+                image: "assets/images/Image Banner 3.png",
+                category: "Fashion",
                 numOfBrands: 3,
                 press: () {},
               ),

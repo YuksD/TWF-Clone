@@ -13,7 +13,7 @@ class Body extends StatelessWidget {
       children: [
         SizedBox(width: double.infinity, height: SizeConfig.screenHeight! * 0.04),
         Image.asset(
-          "assets/images/success_4.png",
+          "assets/images/success.png",
           height: SizeConfig.screenHeight! * 0.4,
         ),
         SizedBox(width: double.infinity, height: SizeConfig.screenHeight! * 0.08),
@@ -24,15 +24,15 @@ class Body extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.black),
         ),
-        Spacer(),
+        const Spacer(),
         SizedBox(
             width: SizeConfig.screenWidth! * 0.6,
             child: DefaultButton(
-                text: "Back to Home",
+                text: "Welcome",
                 press: () {
                   Navigator.pushNamed(context, HomeScreen.routeName);
                 })),
-        Spacer()
+        const Spacer()
       ],
     );
   }
