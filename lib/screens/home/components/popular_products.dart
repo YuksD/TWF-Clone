@@ -4,6 +4,7 @@ import 'package:twf_clone/screens/home/components/section_title.dart';
 import '../../../components/product_card.dart';
 import '../../../models/Product.dart';
 import '../../../size_config.dart';
+import '../../details/details_screen.dart';
 
 class PopularProducts extends StatelessWidget {
   const PopularProducts({
@@ -26,7 +27,23 @@ class PopularProducts extends StatelessWidget {
           child: Row(
             children: [
               ...List.generate(
-                  demoProducts.length, (index) => ProductCard(product: demoProducts[index])),
+                demoProducts.length, 
+              (index) {
+                if(demoProducts[index].isPopular) 
+                  return ProductCard(
+                  product: demoProducts[index],
+                  press: () => Navigator.pushNamed(
+                    context, 
+                    DetailsScreen.routeName,
+                      arguments: ProductDetailsArguments(
+                        product: demoProducts[index]),
+                        ),
+                );
+                
+                return  SizedBox.shrink();
+                  },
+                ),
+              
               SizedBox(
                 width: getProportionateScreenWidth(20),
               )

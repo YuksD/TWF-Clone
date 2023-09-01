@@ -57,12 +57,12 @@ class _SignFormState extends State<SignForm> {
                         remember = value ?? false;
                       });
                     }),
-                const Text("Remember me"),
+                const Text("Beni hatırla"),
                 const Spacer(),
                 GestureDetector(
                   onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
                   child: const Text(
-                    "Forgot Password",
+                    "Şifremi unuttum",
                     style: TextStyle(decoration: TextDecoration.underline),
                   ),
                 )
@@ -71,7 +71,7 @@ class _SignFormState extends State<SignForm> {
             FormError(errors: errors),
             SizedBox(height: getProportionateScreenHeight(20)),
             DefaultButton(
-                text: "Continue",
+                text: "Devam",
                 press: () {
                   errors.clear();
                   if (_formKey.currentState?.validate() ?? true) {
@@ -116,8 +116,8 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: const InputDecoration(
-          labelText: "Password",
-          hintText: "Enter your password",
+          labelText: "Şifre",
+          hintText: "Şifrenizi giriniz",
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: CustomSuffisIcon(
             svgIcon: "assets/icons/lock.svg",
@@ -157,8 +157,8 @@ class _SignFormState extends State<SignForm> {
       },
       decoration: const InputDecoration(
           // labelStyle: TextStyle(color: kPrimaryColor),
-          labelText: "Email",
-          hintText: "Enter your email",
+          labelText: "Eposta",
+          hintText: "Eposta adresinizi giriniz",
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: CustomSuffisIcon(
             svgIcon: "assets/icons/mail.svg",

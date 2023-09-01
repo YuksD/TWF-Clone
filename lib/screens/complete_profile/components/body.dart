@@ -17,17 +17,17 @@ class Body extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Complete Profile",
+                'Complete Profile',
                 style: headingStyle,
               ),
               const Text(
-                "Complete your details or continue \nwith social media",
+                'Complete your details or continue \nwith social media',
                 textAlign: TextAlign.center,
               ),
               const CompleteProfileForm(),
               SizedBox(height: getProportionateScreenHeight(30)),
               const Text(
-                "Bu continuing your confirm that you agree \nwith our Term and Condition",
+                'Bu continuing your confirm that you agree \nwith our Term and Condition',
                 textAlign: TextAlign.center,
               )
             ],

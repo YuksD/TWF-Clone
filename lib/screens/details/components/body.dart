@@ -1,58 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:twf_clone/components/default_button.dart';
+import 'package:twf_clone/models/Product.dart';
+import 'package:twf_clone/screens/details/components/product_description.dart';
+import 'package:twf_clone/screens/details/components/product_images.dart';
+import 'package:twf_clone/screens/details/components/top_rounded_container.dart';
+import 'package:twf_clone/size_config.dart';
 
-import '../../../components/default_button.dart';
-import '../../../models/Product.dart';
-import '../../../size_config.dart';
 import 'color_dots.dart';
-import 'product_description.dart';
-import 'top_rounded_container.dart';
-import 'product_images.dart';
 
 class Body extends StatelessWidget {
-  final Product product;
+  const Body({super.key, required this.product});
 
-  const Body({Key? key, required this.product}) : super(key: key);
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        ProductImages(product: product),
-        TopRoundedContainer(
-          color: Colors.white,
-          child: Column(
-            children: [
-              ProductDescription(
-                product: product,
-                pressOnSeeMore: () {},
-              ),
-              TopRoundedContainer(
-                color: const Color(0xFFF6F7F9),
-                child: Column(
-                  children: [
-                    ColorDots(product: product),
-                    TopRoundedContainer(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          left: SizeConfig.screenWidth! * 0.15,
-                          right: SizeConfig.screenWidth! * 0.15,
-                          bottom: getProportionateScreenWidth(40),
-                          top: getProportionateScreenWidth(15),
-                        ),
-                        child: DefaultButton(
-                          text: "Add To Cart",
-                          press: () {},
-                        ),
-                      ),
-                    ),
-                  ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ProductImages(product: product),
+          TopRoundedCotainer(
+            color: Colors.white,
+            child: Column(
+              children: [
+                ProductDescription(
+                  product: product,
+                  pressOnSeeMore: () {},
                 ),
-              ),
-            ],
-          ),
-        ),
-      ],
+                TopRoundedCotainer(
+                  color: Color(0xFFF6F7F9),
+                  child: Column(
+                    children: [
+                      ColorDots(product: product),
+                      TopRoundedCotainer(
+                          color: Colors.white,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: SizeConfig.screenWidth! * 0.15,
+                              right: SizeConfig.screenWidth! * 0.15,
+                              //top: getProportionateScreenWidth(15),
+                              //bottom: getProportionateScreenWidth(10),
+                            ),
+                            child: DefaultButton(
+                              text: 'Add to Cart',
+                              press: () {},
+                            ),
+                          ))
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

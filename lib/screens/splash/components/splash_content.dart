@@ -14,9 +14,12 @@ class SplashContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Spacer(),
+        const Spacer(
+          flex: 3,
+        ),
         Text(
-          "TOKOTO",
+          textAlign: TextAlign.center,
+          "YUKS\n TENNIS CLUB",
           style: TextStyle(
               fontSize: getProportionateScreenWidth(36),
               color: kPrimaryColor,
@@ -27,7 +30,7 @@ class SplashContent extends StatelessWidget {
         Image.asset(
           image,
           height: getProportionateScreenHeight(265),
-          width: getProportionateScreenWidth(235),
+          width: getProportionateScreenWidth(405),
         ),
       ],
     );

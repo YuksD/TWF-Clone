@@ -13,26 +13,28 @@ class Body extends StatelessWidget {
       children: [
         SizedBox(width: double.infinity, height: SizeConfig.screenHeight! * 0.04),
         Image.asset(
-          "assets/images/success.png",
+          //"assets/images/Pattern Success.png",
+          "assets/images/roland_garros.png",
           height: SizeConfig.screenHeight! * 0.4,
         ),
         SizedBox(width: double.infinity, height: SizeConfig.screenHeight! * 0.08),
         Text(
-          "Login Success",
+          textAlign: TextAlign.center,
+          "Yuks Tenis Kulübüne Hoşgeldiniz",
           style: TextStyle(
               fontSize: getProportionateScreenWidth(30),
               fontWeight: FontWeight.bold,
               color: Colors.black),
         ),
-        const Spacer(),
+        Spacer(),
         SizedBox(
             width: SizeConfig.screenWidth! * 0.6,
             child: DefaultButton(
-                text: "Welcome",
+                text: "Devam",
                 press: () {
                   Navigator.pushNamed(context, HomeScreen.routeName);
                 })),
-        const Spacer()
+        Spacer()
       ],
     );
   }
