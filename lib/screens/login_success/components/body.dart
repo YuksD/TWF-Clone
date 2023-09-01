@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
         SizedBox(width: double.infinity, height: SizeConfig.screenHeight! * 0.08),
         Text(
           textAlign: TextAlign.center,
-          "Yuks Tenis Kulübüne Hoşgeldiniz",
+          "Yuks Tenis Kulübüne Hoşgeldinizzzzzzzzz",
           style: TextStyle(
               fontSize: getProportionateScreenWidth(30),
               fontWeight: FontWeight.bold,
