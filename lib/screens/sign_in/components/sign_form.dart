@@ -5,6 +5,7 @@ import 'package:twf_clone/components/form_error.dart';
 import 'package:twf_clone/constans.dart';
 import 'package:twf_clone/screens/forgot_password/forgot_password_screen.dart';
 import 'package:twf_clone/screens/login_success/login_success_screen.dart';
+import 'package:twf_clone/screens/rezervasyon/rezervasyon.dart';
 import 'package:twf_clone/size_config.dart';
 
 class SignForm extends StatefulWidget {
@@ -57,7 +58,9 @@ class _SignFormState extends State<SignForm> {
                         remember = value ?? false;
                       });
                     }),
-                const Text("Beni hatırla"),
+                GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, RezervasyonScreen.routeName),
+                    child: const Text("Beni hatırla")),
                 const Spacer(),
                 GestureDetector(
                   onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
