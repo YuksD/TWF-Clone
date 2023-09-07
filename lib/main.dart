@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:twf_clone/rezervasyon_provider.dart';
+import 'package:twf_clone/kort1_rezervasyon_provider.dart';
 import 'package:twf_clone/routs.dart';
 import 'package:twf_clone/screens/splash/splash_screeen.dart';
 import 'package:twf_clone/theme.dart';
+import 'package:twf_clone/kort2_rezervasyon_provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(create: (context) => ReservationModel(), child: const MyApp()));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Kort1ReservationModel()),
+        ChangeNotifierProvider(create: (context) => Kort2ReservationModel()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
